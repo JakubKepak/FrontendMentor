@@ -5,36 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | FAQ Accordion Card</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
+  <div class="main_container">
+    <div class="main_container__inner_container_left">
+      <div class="inner-div">
+        <img src="./images/illustration-woman-online-desktop.svg" alt="" id="womapn-picture">
+      </div>
+      <img src="./images/illustration-box-desktop.svg" alt="" id="box-picture">
+    </div>
 
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
+    <div class="main_container__inner_container_right">
+      <!-- TODO: where to place faq_container__header element -->
+      <div class="faq_container__header">faq</div>
+      
+      <div class="faq_container">
+        <div class='faq_container__question'>
+          <span>How many team members can I invite?</span>
+          <div class='faq_container__question-image'>
+            <img class="faq_container__arrow_image" src="./images/icon-arrow-down.svg" alt="">
+          </div>
+        </div>
+        
+        <div class='faq_container__answer'>
+          You can invite up to 2 additional users on the Free plan. There is no limit on 
+          team members for the Premium plan.
+        </div>
+      </div>
 
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
+        <div class="faq_container">
+          <div class='faq_container__question'>
+            <span>What is the maximum file upload size?</span>
+            <div class='faq_container__question-image'>
+              <img class="faq_container__arrow_image" src="./images/icon-arrow-down.svg" alt="">
+            </div>
+          </div>
+          
+          <div class='faq_container__answer'>
+            No more than 2GB. All files in your account must fit your allotted storage space.
+          </div>
+        </div>
 
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
+        <div class="faq_container">
+          <div class='faq_container__question'>
+            <span>How do I reset my password?</span>
+            <div class='faq_container__question-image'>
+              <img class="faq_container__arrow_image" src="./images/icon-arrow-down.svg" alt="">
+            </div>
+          </div>
+          
+          <div class='faq_container__answer'>
+            Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.
+          </div>
+        </div>
 
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
+        <div class="faq_container">
+          <div class='faq_container__question'>
+            <span>Can I cancel my subscription?</span>
+            <div class='faq_container__question-image'>
+              <img class="faq_container__arrow_image" src="./images/icon-arrow-down.svg" alt="">
+            </div>
+          </div>
+          
+          <div class='faq_container__answer'>
+            Yes! Send us a message and we’ll process your request no questions asked.
+          </div>
+        </div>
+
+        <div class="faq_container">
+          <div class='faq_container__question'>
+            <span>Do you provide additional support?</span>
+            <div class='faq_container__question-image'>
+              <img class="faq_container__arrow_image" src="./images/icon-arrow-down.svg" alt="">
+            </div>
+          </div>
+          
+          <div class='faq_container__answer'>
+            Chat and email support is available 24/7. Phone lines are open during normal business hours.
+          </div>
+        </div>
+
+    </div>
+  </div>
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src='script.js'></script>
 </body>
 </html>
