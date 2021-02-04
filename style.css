@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root {
+  /* Primary colors */
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  /* neutral colors */
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--Very-Light-Gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 540px;
+  margin-bottom: 4rem;
+}
+
+.header span:nth-of-type(1) {
+  font-weight: 200;
+  font-size: 36px;
+}
+
+.header span:nth-of-type(2) {
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.header span:nth-of-type(3) {
+  font-weight: 400;
+  font-size: 15px;
+  text-align: center;
+  color: var(--Grayish-Blue);
+  margin-top: 1rem;
+}
+
+.box_container {
+  width: 60vw;
+  height: 55vh;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    ". r ."
+    "c r b"
+    "c y b"
+    ". y .";
+
+  grid-gap: 20px;
+}
+
+.box {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 5px 18px 5px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.box span:nth-of-type(1) {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 0.7rem;
+}
+
+.box span:nth-of-type(2) {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 23px;
+  color: var(--Grayish-Blue);
+}
+
+.box img {
+  width: 64px;
+  margin-left: auto;
+  margin-top: auto;
+}
+
+.box--supervisor {
+  grid-area: c;
+  border-top: 4px solid var(--Cyan);
+}
+
+.box--team {
+  grid-area: r;
+  border-top: 4px solid var(--Red);
+}
+
+.box--karma {
+  grid-area: y;
+  border-top: 4px solid var(--Orange);
+}
+
+.box--calculator {
+  grid-area: b;
+  border-top: 4px solid var(--Blue);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 1070px) {
+  .box_container {
+    width: 80vw;
+    height: 55vh;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      ". r ."
+      "c r b"
+      "c y b"
+      ". y .";
+
+    grid-gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .box_container {
+    width: 90vw;
+    height: 55vh;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      ". r ."
+      "c r b"
+      "c y b"
+      ". y .";
+
+    grid-gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .box_container {
+    width: 100vw;
+    height: 55vh;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      ". r ."
+      "c r b"
+      "c y b"
+      ". y .";
+
+    grid-gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .box_container {
+    width: 100vw;
+    height: 55vh;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "c r"
+      "c r"
+      "y b"
+      "y b";
+
+    grid-gap: 20px;
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin-bottom: 4rem;
+    margin-top: 8rem;
+    padding: 0 1rem;
+  }
+
+  .header span:nth-of-type(1) {
+    font-weight: 200;
+    font-size: 24px;
+  }
+
+  .header span:nth-of-type(2) {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .header span:nth-of-type(3) {
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    color: var(--Grayish-Blue);
+    margin-top: 1rem;
+  }
+
+  .box_container {
+    width: 100vw;
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(12, 222px);
+    grid-template-areas:
+      "c"
+      "r"
+      "y"
+      "b";
+
+    grid-gap: 20px;
+    padding: 0 1rem;
+  }
+}
