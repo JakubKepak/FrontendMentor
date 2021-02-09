@@ -4,6 +4,7 @@
   /* Colors */
   --soft-violet: hsl(273, 75%, 66%);
   --soft-blue: hsl(240, 73%, 65%);
+  --Soft-red: hsl(14, 88%, 65%);
 
   --white: #fff;
 
@@ -53,6 +54,10 @@ body {
   height: 100%;
 }
 
+.inner-div__bg_mobile {
+  display: none;
+}
+
 #womapn-picture {
   position: relative;
   top: 70px;
@@ -87,6 +92,10 @@ body {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+}
+
+.faq_container__question span:hover {
+  color: var(--Soft-red);
 }
 
 .faq_container__question--open {
@@ -132,12 +141,23 @@ body {
 @media only screen and (max-width: 375px) {
   .main_container {
     display: grid;
-    grid-template-columns: 0 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
     width: 330px;
     /* height: 500px; */
     background-color: var(--white);
     border-radius: 25px;
     box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.4);
+    height: 80vh;
+    margin-top: 4rem;
+  }
+
+  .faq_container {
+    display: grid;
+    margin: 0rem 0;
+    width: 80%;
+    border-bottom: 1px solid var(--divider);
+    padding: 1rem;
   }
 
   .faq_container__header {
@@ -150,30 +170,43 @@ body {
     text-align: center;
   }
 
-  #womapn-picture {
+  .inner-div {
+    overflow: none;
+    height: 100%;
     position: relative;
-    top: 70px;
-    left: -80px;
+  }
+
+  #womapn-picture {
+    position: absolute;
+    top: -90px;
+    left: 20%;
     object-fit: cover;
-    visibility: hidden;
-    height: 0;
+    /* visibility: hidden; */
+    height: 150px;
+    z-index: 400;
+  }
+
+  .inner-div__bg_mobile {
+    display: block;
+    position: absolute;
+    left: 18%;
+    height: 90px;
+    top: 0;
   }
 
   #box-picture {
     position: relative;
-    top: -400px;
-    left: -130px;
+    top: 0;
+    left: 0;
     visibility: hidden;
-    height: 0;
+    height: 100px;
   }
   .inner-div {
-    overflow: hidden;
-    height: 0;
+    overflow: visible;
+    height: 100%;
   }
   .main_container__inner_container_left {
-    background-image: url(./images/bg-pattern-desktop.svg);
-    background-position: -570px -290px;
-    background-repeat: no-repeat;
-    height: 0;
+    background-image: none;
+    height: 100%;
   }
 }

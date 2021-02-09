@@ -7,7 +7,6 @@ const rotateArrow = (element) => {
 };
 
 const toggleHideAnswer = (element) => {
-  console.log(element);
   if (element.classList.contains("faq_container__answer--closed")) {
     element.classList.remove("faq_container__answer--closed");
   } else {
@@ -22,3 +21,5 @@ document.querySelectorAll(".faq_container__question").forEach((item) => {
     rotateArrow(item.children[1].children[0]);
   });
 });
+
+//TODO: style faq_container with pseudo classes so it will be easier to animate in js
