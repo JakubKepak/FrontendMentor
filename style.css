@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+:root {
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--Light-Grayish-Blue);
+}
+
+.main_container {
+  background: white;
+  border-radius: 7px;
+  box-shadow: 9px 10px 27px 0px rgba(0, 0, 0, 0.1);
+  width: 720px;
+  height: 270px;
+  display: grid;
+  grid-template-columns: 275px 1fr;
+  grid-template-areas: "i c";
+}
+
+.main__column_image {
+  background-image: url("./images/drawers.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 7px 0 0 7px;
+  grid-area: i;
+}
+
+.main__column_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding: 2rem;
+  grid-area: c;
+}
+
+.card__header {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.card__text {
+  font-size: 0.7rem;
+  line-height: 1.2rem;
+  color: var(--Very-Dark-Grayish-Blue);
+}
+
+.card__footer {
+  display: flex;
+  position: relative;
+}
+
+.card__share__action-menu {
+  position: absolute;
+  right: -100px;
+  top: -80px;
+  background: var(--Very-Dark-Grayish-Blue);
+  width: 15rem;
+  height: 3rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.1);
+  padding: 0 1.5rem;
+}
+
+.card__share__action-menu span {
+  text-transform: uppercase;
+  color: var(--Grayish-Blue);
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  font-size: 0.7rem;
+}
+
+.card__share__action-menu img {
+  transform: scale(0.5);
+}
+
+.card__footer img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.card__share__helper {
+  position: absolute;
+  display: block;
+  width: 0px;
+  height: 0px;
+  bottom: -20px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid var(--Very-Dark-Grayish-Blue);
+}
+
+.card__name {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  align-self: center;
+}
+
+.card__name span:nth-of-type(1) {
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+
+.card__name span:nth-of-type(2) {
+  font-size: 0.7rem;
+  color: var(--Grayish-Blue);
+}
+
+.card__share {
+  margin-left: auto;
+  background: var(--Light-Grayish-Blue);
+  border-radius: 50%;
+}
+
+.card__share img {
+  transform: scale(0.5);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 380px) {
+  .main_container {
+    background: white;
+    border-radius: 7px;
+    box-shadow: 9px 10px 27px 0px rgba(0, 0, 0, 0.1);
+    width: 90vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% 1fr;
+    grid-template-areas:
+      "i"
+      "c";
+  }
+
+  .main__column_image {
+    background-image: url("./images/drawers.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 7px 7px 0 0;
+    grid-area: i;
+  }
+
+  .main__column_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+    padding: 2rem 2rem 0 2rem;
+    grid-area: c;
+  }
+
+  .card__share__action-menu {
+    position: absolute;
+    right: -32px;
+    top: -25px;
+    background: var(--Very-Dark-Grayish-Blue);
+    width: 90vw;
+    height: 240%;
+    border-radius: 0 0 7px 7px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.1);
+    z-index: 500;
+    padding-right: 5rem;
+    padding-bottom: 0.5rem;
+  }
+  .card__share__helper {
+    display: none;
+  }
+  .card__share {
+    z-index: 1000;
+  }
+}
