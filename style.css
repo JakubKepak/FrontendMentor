@@ -242,7 +242,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 380px) {
   :root {
     --base-font-size: 12px;
   }
