@@ -1,0 +1,190 @@
+:root {
+  /* colors */
+  --Cyan: hsl(179, 62%, 43%);
+  --Light-Cyan: hsla(179, 62%, 43%, 0.8);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+  --White: hsl(0, 100%, 100%);
+
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+
+  /* type scale */
+  --base-font-size: 16px;
+  --large-font-size: 20px;
+  --xxl-font-size: 40px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Karla", sans-serif;
+  font-size: var(--base-font-size);
+  background-color: var(--Light-Gray);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_container {
+  width: 80vh;
+  height: 60vh;
+  max-width: 1000px;
+  min-width: 250px;
+  max-height: 1000px;
+
+  color: var(--White);
+  background-color: var(--White);
+  border-radius: 10px;
+  box-shadow: 2px 3px 6px 2px rgba(0, 0, 0, 0.1);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 45% 1fr;
+  grid-template-areas:
+    "community community"
+    "subscription whyus";
+}
+
+.main_container div {
+  padding: 2.5rem;
+}
+
+.community__container {
+  grid-area: community;
+  color: var(--Light-Gray);
+}
+
+.community__container > * {
+  margin-bottom: 1rem;
+}
+
+.community__header {
+  color: var(--Cyan);
+  font-weight: 700;
+}
+
+.community__guarantee {
+  color: var(--Bright-Yellow);
+  font-size: var(--large-font-size);
+  font-weight: 700;
+}
+
+.community__description {
+  color: var(--Grayish-Blue);
+  line-height: 1.7em;
+}
+
+.subscription__header {
+  margin-bottom: 1rem;
+}
+
+.subscription__price {
+  display: flex;
+  align-items: center;
+}
+
+.subscription__price--inner span {
+  font-size: var(--xxl-font-size);
+  font-weight: 700;
+  margin-right: 1rem;
+  color: var(--White);
+}
+
+.subscription__container {
+  grid-area: subscription;
+  background-color: var(--Cyan);
+  border-radius: 0 0 0 10px;
+}
+
+.subscription__button {
+  border: none;
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  background-color: var(--Bright-Yellow);
+  color: var(--White);
+  font-family: inherit;
+  font-weight: 700;
+  box-shadow: 2px 3px 6px 2px rgba(0, 0, 0, 0.1);
+}
+
+.subscription__button:hover {
+  cursor: pointer;
+}
+
+.subscription__button:focus {
+  outline: none;
+}
+
+.whyus__container {
+  grid-area: whyus;
+  background-color: var(--Light-Cyan);
+  border-radius: 0 0 10px 0;
+  padding-right: 7rem;
+}
+
+.whyus__container > * {
+  margin-bottom: 1rem;
+}
+
+.whyus__description {
+  line-height: 1.5em;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 720px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .main_container {
+    width: 90vw;
+    margin: 3rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 55% 1fr 1fr;
+    grid-template-areas:
+      "community"
+      "subscription"
+      "whyus";
+  }
+
+  .subscription__container {
+    border-radius: 0;
+  }
+
+  .whyus__container {
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .main_container div {
+    padding: 2rem 1.5rem;
+  }
+
+  h1,
+  h2 {
+    font-size: var(--large-font-size);
+  }
+
+  .community__guarantee {
+    font-size: var(--base-font-size);
+  }
+}
