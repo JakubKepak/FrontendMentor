@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
-
 :root {
   /* Primary colors */
   --Red: hsl(0, 78%, 62%);
@@ -13,9 +11,15 @@
   --Very-Light-Gray: hsl(0, 0%, 98%);
 }
 
+html {
+  font-size: 62.5%;
+}
+
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 
   font-family: "Poppins", sans-serif;
@@ -27,6 +31,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
   width: 100vw;
   height: 100vh;
 }
@@ -35,13 +40,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 540px;
-  margin-bottom: 4rem;
+  width: 54rem;
+  margin-bottom: 5rem;
 }
 
 .header span:nth-of-type(1) {
   font-weight: 200;
-  font-size: 36px;
+  font-size: 3.6rem;
 }
 
 .header span:nth-of-type(2) {
@@ -51,7 +56,7 @@ body {
 
 .header span:nth-of-type(3) {
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1.5rem;
   text-align: center;
   color: var(--Grayish-Blue);
   margin-top: 1rem;
@@ -59,9 +64,10 @@ body {
 
 .box_container {
   width: 60vw;
-  height: 55vh;
+  max-width: 1000px;
 
   display: grid;
+  grid-gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-template-areas:
@@ -69,8 +75,6 @@ body {
     "c r b"
     "c y b"
     ". y .";
-
-  grid-gap: 20px;
 }
 
 .box {
@@ -85,19 +89,20 @@ body {
 
 .box span:nth-of-type(1) {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 2rem;
   margin-bottom: 0.7rem;
 }
 
 .box span:nth-of-type(2) {
   font-weight: 400;
-  font-size: 13px;
-  line-height: 23px;
+  font-size: 1.3rem;
+  line-height: 2.3rem;
   color: var(--Grayish-Blue);
 }
 
 .box img {
-  width: 64px;
+  width: 6.4rem;
+  height: 6.4rem;
   margin-left: auto;
   margin-top: auto;
 }
@@ -122,10 +127,16 @@ body {
   border-top: 4px solid var(--Blue);
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
+footer {
+  position: absolute;
+  bottom: 4px;
 }
+
+.attribution {
+  font-size: 1.1rem;
+  bottom: 4px;
+}
+
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
@@ -133,61 +144,25 @@ body {
 @media only screen and (max-width: 1070px) {
   .box_container {
     width: 80vw;
-    height: 55vh;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas:
-      ". r ."
-      "c r b"
-      "c y b"
-      ". y .";
-
-    grid-gap: 20px;
   }
 }
 
 @media only screen and (max-width: 800px) {
   .box_container {
     width: 90vw;
-    height: 55vh;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas:
-      ". r ."
-      "c r b"
-      "c y b"
-      ". y .";
-
-    grid-gap: 20px;
   }
 }
 
 @media only screen and (max-width: 700px) {
   .box_container {
     width: 100vw;
-    height: 55vh;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas:
-      ". r ."
-      "c r b"
-      "c y b"
-      ". y .";
-
-    grid-gap: 20px;
   }
 }
 
 @media only screen and (max-width: 630px) {
   .box_container {
     width: 100vw;
-    height: 55vh;
+    padding: 0 1rem;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -197,54 +172,42 @@ body {
       "c r"
       "y b"
       "y b";
-
-    grid-gap: 20px;
-    padding: 0 1rem;
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 540px) {
   .header {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100vw;
     margin-bottom: 4rem;
-    margin-top: 8rem;
+    margin-top: 6rem;
     padding: 0 1rem;
   }
 
   .header span:nth-of-type(1) {
     font-weight: 200;
-    font-size: 24px;
+    font-size: 2.4rem;
   }
 
   .header span:nth-of-type(2) {
     font-weight: 600;
-    font-size: 24px;
-  }
-
-  .header span:nth-of-type(3) {
-    font-weight: 400;
-    font-size: 15px;
-    text-align: center;
-    color: var(--Grayish-Blue);
-    margin-top: 1rem;
+    font-size: 2.4rem;
   }
 
   .box_container {
     width: 100vw;
+    height: 55vh;
+    padding-bottom: 3rem;
 
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(12, 222px);
+    grid-template-rows: repeat(12, 20rem);
     grid-template-areas:
       "c"
       "r"
       "y"
       "b";
-
-    grid-gap: 20px;
-    padding: 0 1rem;
   }
 }
