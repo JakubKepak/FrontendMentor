@@ -2,7 +2,7 @@
 List of completed challenges. Each challenge has it's own branch where you can see the code.
 
 ## Article preview component
-Live website: https://app.netlify.com/sites/vibrant-nobel-944299/overview
+Live website: https://app.netlify.com/sites/vibrant-nobel-944299/overview  
 Solution on FEM: https://www.frontendmentor.io/solutions/article-html-css-js-y7k22BhcG
 
 ## Four card feature section
