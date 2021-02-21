@@ -1,13 +1,31 @@
+:root {
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+  --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
