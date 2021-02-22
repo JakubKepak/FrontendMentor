@@ -50,6 +50,10 @@ const TodoDeleteButton = styled.div`
   ${TodoItem}:hover & {
     display: block;
   }
+
+  @media (max-width: 380px) {
+    display: block;
+  }
 `;
 
 const TodoCheckboxLabel = styled.label`
