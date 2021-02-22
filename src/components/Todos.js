@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import useLocalStorage from "../hooks/useLocalStorage";
 
+import checkedIcon from "../images/icon-check.svg";
+
 const TodosContainer = styled.div`
   background-color: ${(props) => props.theme.backgroundTodos};
   width: 100%;
@@ -12,6 +14,8 @@ const TodosContainer = styled.div`
 `;
 
 const TodoItem = styled.div`
+  display: flex;
+  align-items: center;
   border-bottom: 1px solid ${(props) => props.theme.checkboxBorderColor};
   padding: 1rem 1rem;
 `;
@@ -30,7 +34,51 @@ const TodoName = styled.span`
   `}
 `;
 
-const TodoCheckbox = styled.input``;
+const TodoCheckboxLabel = styled.label`
+  display: inline-block;
+  position: relative;
+  border: 1px solid ${(props) => props.theme.checkboxBorderColor};
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background-image: linear-gradient(
+      to bottom right,
+      hsl(192, 100%, 67%),
+      hsl(280, 87%, 65%)
+    );
+  }
+
+  ${({ isDone }) =>
+    isDone &&
+    `   
+    background-image: linear-gradient(
+    to bottom right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  `}
+`;
+
+const TodoCheckbox = styled.input`
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+`;
+
+const TodoSpan = styled.span`
+  background-image: url(${checkedIcon});
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+  display: block;
+  width: 10px;
+  height: 10px;
+`;
 
 const LoadingContainer = styled.div``;
 
@@ -39,8 +87,16 @@ const NoTodosContainer = styled.div``;
 const FilterMenuContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: ${(props) => props.theme.textColorLight};
   padding: 1rem 1rem;
+  font-size: 0.8rem;
+`;
+
+const FilterMenuContainerCenter = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 0.5rem;
 `;
 
 const FilterOptionItem = styled.span`
@@ -52,6 +108,7 @@ const FilterOptionItem = styled.span`
     selection === localStorageData &&
     `
     color: ${theme.brightBlueColor};
+    font-weight: 700;
   `}
 `;
 
@@ -100,12 +157,15 @@ export default function Todos({ todosLS, changeStatus, clearCompleted }) {
         todos.map((todo) => {
           return (
             <TodoItem key={todo.id}>
-              <TodoCheckbox
-                id={todo.id}
-                type="checkbox"
-                defaultChecked={todo.done}
-                onChange={handleStatusChange}
-              />
+              <TodoCheckboxLabel isDone={todo.done}>
+                <TodoCheckbox
+                  id={todo.id}
+                  type="checkbox"
+                  defaultChecked={todo.done}
+                  onChange={handleStatusChange}
+                />
+                <TodoSpan />
+              </TodoCheckboxLabel>
               <TodoName isDone={todo.done}>{todo.name}</TodoName>
             </TodoItem>
           );
@@ -113,28 +173,35 @@ export default function Todos({ todosLS, changeStatus, clearCompleted }) {
       )}
 
       <FilterMenuContainer>
-        {todos.length} Items left
-        <FilterOptionItem
-          localStorageData={localStorageData}
-          selection="All"
-          onClick={handleFilterOptionChange}
-        >
-          All
-        </FilterOptionItem>
-        <FilterOptionItem
-          localStorageData={localStorageData}
-          selection="Active"
-          onClick={handleFilterOptionChange}
-        >
-          Active
-        </FilterOptionItem>
-        <FilterOptionItem
-          localStorageData={localStorageData}
-          selection="Completed"
-          onClick={handleFilterOptionChange}
-        >
-          Completed
-        </FilterOptionItem>
+        {
+          todosLS.filter((item) => {
+            return item.done === false;
+          }).length
+        }{" "}
+        Items left
+        <FilterMenuContainerCenter>
+          <FilterOptionItem
+            localStorageData={localStorageData}
+            selection="All"
+            onClick={handleFilterOptionChange}
+          >
+            All
+          </FilterOptionItem>
+          <FilterOptionItem
+            localStorageData={localStorageData}
+            selection="Active"
+            onClick={handleFilterOptionChange}
+          >
+            Active
+          </FilterOptionItem>
+          <FilterOptionItem
+            localStorageData={localStorageData}
+            selection="Completed"
+            onClick={handleFilterOptionChange}
+          >
+            Completed
+          </FilterOptionItem>
+        </FilterMenuContainerCenter>
         <FilterOptionItem
           localStorageData={localStorageData}
           selection="Clear"

@@ -8,7 +8,7 @@ const NewTodoContainer = styled.div`
   border-radius: 5px;
   display: flex;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 1rem;
   box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.1);
 `;
 

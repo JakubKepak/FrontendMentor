@@ -49,8 +49,6 @@ const light = {
   textColorLight: "hsl(236, 9%, 61%)",
   textColorDark: "hsl(235, 19%, 35%)",
   textColorItemDone: "hsl(233, 11%, 84%)",
-  checkedBackground:
-    "linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)",
   brightBlueColor: "hsl(220, 98%, 61%)",
 };
 
@@ -65,8 +63,6 @@ const dark = {
   textColorLight: "hsl(236, 9%, 61%)",
   textColorDark: "hsl(235, 19%, 35%)",
   textColorItemDone: "hsl(233, 11%, 84%)",
-  checkedBackground:
-    "linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)",
   brightBlueColor: "hsl(220, 98%, 61%)",
 };
 
@@ -85,7 +81,8 @@ const MainContainer = styled.div`
 `;
 
 const AppContainer = styled.div`
-  width: 40%;
+  width: 95%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
 `;
