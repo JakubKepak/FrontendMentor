@@ -108,9 +108,17 @@ const TodoSpan = styled.span`
   `}
 `;
 
-const LoadingContainer = styled.div``;
+const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+`;
 
-const NoTodosContainer = styled.div``;
+const NoTodosContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+`;
 
 const FilterMenuContainer = styled.div`
   display: flex;
@@ -147,6 +155,10 @@ const FilterMenuContainerCenter = styled.div`
 const FilterOptionItem = styled.span`
   &:hover {
     cursor: pointer;
+  }
+
+  &:hover {
+    color: ${(props) => props.theme.textColorDark};
   }
 
   ${({ selection, localStorageData, theme }) =>

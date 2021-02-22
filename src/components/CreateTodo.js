@@ -18,7 +18,7 @@ const NewTodoInput = styled.input`
   border: none;
   font-family: inherit;
   font-size: 1.3rem;
-  color: ${(props) => props.theme.main};
+  color: ${(props) => props.theme.textColorDark};
   background: none;
 
   &:placeholder {
