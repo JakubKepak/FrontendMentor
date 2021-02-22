@@ -136,7 +136,12 @@ const FilterOptionItem = styled.span`
   `}
 `;
 
-export default function Todos({ todosLS, changeStatus, clearCompleted }) {
+export default function Todos({
+  todosLS,
+  changeStatus,
+  clearCompleted,
+  deleteTodoItem,
+}) {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(true);
   const { localStorageData, setFilterOption } = useLocalStorage(
@@ -191,7 +196,7 @@ export default function Todos({ todosLS, changeStatus, clearCompleted }) {
                 <TodoSpan isDone={todo.done} />
               </TodoCheckboxLabel>
               <TodoName isDone={todo.done}>{todo.name}</TodoName>
-              <TodoDeleteButton />
+              <TodoDeleteButton onClick={() => deleteTodoItem(todo.id)} />
             </TodoItem>
           );
         })

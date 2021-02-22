@@ -95,6 +95,7 @@ function App() {
     addTodoItem,
     changeStatusInTodo,
     clearAllCompletedTodos,
+    deleteTodoItem,
   } = useLocalStorage("todos", []);
 
   // TODO: might be maybe simplified
@@ -116,6 +117,7 @@ function App() {
             <Header switchThemes={switchThemes} />
             <CreateTodo addTodo={addTodoItem} />
             <Todos
+              deleteTodoItem={deleteTodoItem}
               changeStatus={changeStatusInTodo}
               clearCompleted={clearAllCompletedTodos}
               todosLS={localStorageData}

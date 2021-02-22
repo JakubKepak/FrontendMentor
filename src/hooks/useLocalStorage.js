@@ -4,6 +4,7 @@ const ADD_TODO = "ADD_TODO";
 const CHANGE_TODO_STATUS = "CHANGE_TODO_STATUS";
 const CLEAR_ALL_COMPLETED = "CLEAR_ALL_COMPLETED";
 const SET_FILTER_OPTION = "SET_FILTER_OPTION";
+const DELETE_TODO_ITEM = "DELETE_TODO_ITEM";
 
 // TODO: rewrite to switch
 const reducer = (state, action) => {
@@ -15,11 +16,13 @@ const reducer = (state, action) => {
     return [...state];
   }
   if (action.type === CLEAR_ALL_COMPLETED) {
-    const newState = state.filter((item) => item.done === false);
-    return newState;
+    return state.filter((item) => item.done === false);
   }
   if (action.type === SET_FILTER_OPTION) {
     return action.payload;
+  }
+  if (action.type === DELETE_TODO_ITEM) {
+    return state.filter((item) => item.id !== action.payload);
   }
 };
 
@@ -66,11 +69,19 @@ export default function useLocalStorage(key, defaultValue) {
     });
   };
 
+  const deleteTodoItem = (itemId) => {
+    dispatch({
+      type: DELETE_TODO_ITEM,
+      payload: itemId,
+    });
+  };
+
   return {
     localStorageData,
     addTodoItem,
     changeStatusInTodo,
     clearAllCompletedTodos,
     setFilterOption,
+    deleteTodoItem,
   };
 }
