@@ -38,6 +38,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+// themes
+
 const light = {
   bodyBackgroundColor: "white",
   backgroundImage: backgroundLightImage,
@@ -98,6 +100,7 @@ function App() {
     deleteTodoItem,
   } = useLocalStorage("todos", []);
 
+  // TODO: store theme to local storage
   const switchThemes = () => {
     theme === light ? setTheme(dark) : setTheme(light);
   };

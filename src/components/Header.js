@@ -17,6 +17,10 @@ const AppName = styled.h1`
   text-transform: uppercase;
   color: white;
   letter-spacing: 0.9rem;
+
+  @media (max-width: 380px) {
+    font-size: 2rem;
+  }
 `;
 
 const ThemeIcon = styled.div`
@@ -25,6 +29,11 @@ const ThemeIcon = styled.div`
   background-image: url(${(props) => props.theme.themeIcon});
   background-size: cover;
   transition: all 0.3s;
+
+  @media (max-width: 380px) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 `;
 
 export default function Header({ switchThemes }) {

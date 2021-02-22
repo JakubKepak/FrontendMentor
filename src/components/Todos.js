@@ -114,6 +114,7 @@ const NoTodosContainer = styled.div``;
 
 const FilterMenuContainer = styled.div`
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
   color: ${(props) => props.theme.textColorLight};
@@ -125,6 +126,22 @@ const FilterMenuContainerCenter = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-gap: 0.5rem;
+
+  @media (max-width: 380px) {
+    position: absolute;
+    bottom: -150%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 1.2rem;
+
+    background-color: ${(props) => props.theme.backgroundTodos};
+    box-shadow: 0px 5px 60px 5px rgba(0, 0, 0, 0.1);
+  }
 `;
 
 const FilterOptionItem = styled.span`
