@@ -98,14 +98,8 @@ function App() {
     deleteTodoItem,
   } = useLocalStorage("todos", []);
 
-  // TODO: might be maybe simplified
   const switchThemes = () => {
-    console.log("theme switched");
-    if (theme === light) {
-      setTheme(dark);
-    } else {
-      setTheme(light);
-    }
+    theme === light ? setTheme(dark) : setTheme(light);
   };
 
   return (
