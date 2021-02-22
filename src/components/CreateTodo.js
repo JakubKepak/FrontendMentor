@@ -45,7 +45,9 @@ export default function CreateTodo({ addTodo }) {
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
-      addTodo(value);
+      if (value !== "") {
+        addTodo(value);
+      }
       setValue("");
     }
   };
