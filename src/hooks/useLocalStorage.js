@@ -6,23 +6,24 @@ const CLEAR_ALL_COMPLETED = "CLEAR_ALL_COMPLETED";
 const SET_FILTER_OPTION = "SET_FILTER_OPTION";
 const DELETE_TODO_ITEM = "DELETE_TODO_ITEM";
 
-// TODO: rewrite to switch
 const reducer = (state, action) => {
-  if (action.type === ADD_TODO) {
-    return [action.payload, ...state];
-  }
-  if (action.type === CHANGE_TODO_STATUS) {
-    state[action.payload.index].done = !state[action.payload.index].done;
-    return [...state];
-  }
-  if (action.type === CLEAR_ALL_COMPLETED) {
-    return state.filter((item) => item.done === false);
-  }
-  if (action.type === SET_FILTER_OPTION) {
-    return action.payload;
-  }
-  if (action.type === DELETE_TODO_ITEM) {
-    return state.filter((item) => item.id !== action.payload);
+  switch (action.type) {
+    case ADD_TODO:
+      return [action.payload, ...state];
+    case CHANGE_TODO_STATUS: {
+      if (action.type === CHANGE_TODO_STATUS) {
+        state[action.payload.index].done = !state[action.payload.index].done;
+      }
+      return [...state];
+    }
+    case CLEAR_ALL_COMPLETED:
+      return state.filter((item) => item.done === false);
+    case SET_FILTER_OPTION:
+      return action.payload;
+    case DELETE_TODO_ITEM:
+      return state.filter((item) => item.id !== action.payload);
+    default:
+      return state;
   }
 };
 
