@@ -4,6 +4,7 @@ import styled from "styled-components";
 import useLocalStorage from "../hooks/useLocalStorage";
 
 import checkedIcon from "../images/icon-check.svg";
+import deleteIcon from "../images/icon-cross.svg";
 
 const TodosContainer = styled.div`
   background-color: ${(props) => props.theme.backgroundTodos};
@@ -32,6 +33,23 @@ const TodoName = styled.span`
     text-decoration: line-through;
     color: ${theme.textColorItemDone};
   `}
+`;
+
+const TodoDeleteButton = styled.div`
+  width: 1rem;
+  height: 1rem;
+  background-image: url(${deleteIcon});
+  background-size: contain;
+  margin-left: auto;
+  display: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  ${TodoItem}:hover & {
+    display: block;
+  }
 `;
 
 const TodoCheckboxLabel = styled.label`
@@ -75,9 +93,15 @@ const TodoSpan = styled.span`
   position: absolute;
   top: 0.4rem;
   left: 0.4rem;
-  display: block;
+  display: none;
   width: 10px;
   height: 10px;
+
+  ${({ isDone }) =>
+    isDone &&
+    `
+      display: block
+  `}
 `;
 
 const LoadingContainer = styled.div``;
@@ -164,9 +188,10 @@ export default function Todos({ todosLS, changeStatus, clearCompleted }) {
                   defaultChecked={todo.done}
                   onChange={handleStatusChange}
                 />
-                <TodoSpan />
+                <TodoSpan isDone={todo.done} />
               </TodoCheckboxLabel>
               <TodoName isDone={todo.done}>{todo.name}</TodoName>
+              <TodoDeleteButton />
             </TodoItem>
           );
         })
