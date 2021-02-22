@@ -62,9 +62,9 @@ const dark = {
   themeIcon: lightThemeIcon,
   fontColor: "hsl(0, 0%, 98%)",
   checkboxBorderColor: "hsl(234, 11%, 52%)",
-  textColorLight: "hsl(236, 9%, 61%)",
-  textColorDark: "hsl(235, 19%, 35%)",
-  textColorItemDone: "hsl(233, 11%, 84%)",
+  textColorLight: "hsl(235, 19%, 35%)",
+  textColorDark: "hsl(236, 33%, 92%)",
+  textColorItemDone: "hsl(233, 14%, 35%)",
   brightBlueColor: "hsl(220, 98%, 61%)",
 };
 
@@ -90,7 +90,7 @@ const AppContainer = styled.div`
 `;
 
 function App() {
-  const [theme, setTheme] = useState(light);
+  const [theme, setTheme] = useState(dark);
 
   const {
     localStorageData,
